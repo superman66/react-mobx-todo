@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+@observer
 class TodoView extends Component {
   render() {
     const { todo } = this.props;
