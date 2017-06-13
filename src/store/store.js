@@ -1,10 +1,10 @@
-const todoStore = title =>
+export const todoStore = title =>
   observable({
     title: title,
     finished: false,
   });
 
-const todoListStore = observable({
+export const todoListStore = observable({
   todos: [],
   unfinishedTodoCount: computed(() => {
     return todoListStore.todos.filter(todo => !todo.finished).length;
