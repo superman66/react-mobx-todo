@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import 'todomvc-app-css/index.css'
-import Todo from './component/Todo';
-import TodoListView from './component/TodoListView.js'
-import todoListStore from './store/store.js'
+import TodoApp from './component/TodoApp';
+import TodoStore from './stores/TodoStore.js'
+import ViewStore from './stores/ViewStore.js'
 
+const todoStore = TodoStore.fromJS([]);
+const viewStore = new ViewStore();
+
+todoStore.addTodo('test1');
+todoStore.addTodo('test2');
 ReactDOM.render(
-  <TodoListView todoList={todoListStore} />,
+  <TodoApp todoStore={todoStore} viewStore={viewStore} />,
   document.getElementById('root')
 );

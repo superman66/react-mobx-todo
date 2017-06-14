@@ -18,7 +18,7 @@ const plugins = [
   }),
   extractLess,
   new HtmlwebpackPlugin({
-    title: 'react-test-demo',
+    title: 'react-mobx-demo',
     filename: 'index.html',
     template: 'src/index.html',
     inject: true,

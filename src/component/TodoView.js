@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 
 @observer
 class TodoView extends Component {
@@ -8,10 +9,9 @@ class TodoView extends Component {
       <li>
         <input
           type="checkbox"
-          checked={todo.finished}
-          onClick={ () => todo.finished = !todo.finished}
+          onClick={ () => todo.completed = !todo.completed}
         />
-        {todo.title}
+        3
       </li>
     );
   }

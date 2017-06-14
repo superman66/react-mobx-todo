@@ -5,13 +5,16 @@ import { observer } from 'mobx-react'
 @observer
 class TodoListView extends Component {
   render() {
-    const { todoList } = this.props;
+    const { todoStore } = this.props;
+    if (todoStore.todos.length === 0) {
+      return null;
+    }
     return (
       <div>
         <ul>
-          {todoList.todos.map(todo => <TodoView todo={todo} key={todo.id} />)}
+          {todoStore.todos.map(todo => <TodoView todo={todo} key={todo.id} />)}
         </ul>
-        Task left: {todoList.unfinshedTodoCount}
+        Task left: {todoStore.activeTodoCount}
       </div>
     );
   }
