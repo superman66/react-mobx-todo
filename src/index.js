@@ -10,6 +10,7 @@ const viewStore = new ViewStore();
 
 todoStore.addTodo('test1');
 todoStore.addTodo('test2');
+
 ReactDOM.render(
   <TodoApp todoStore={todoStore} viewStore={viewStore} />,
   document.getElementById('root')

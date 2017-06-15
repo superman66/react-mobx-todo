@@ -6,13 +6,14 @@ import { observer } from 'mobx-react'
 class TodoListView extends Component {
   render() {
     const { todoStore } = this.props;
+    console.log(todoStore.todos.toJS());
     if (todoStore.todos.length === 0) {
       return null;
     }
     return (
       <div>
         <ul>
-          {todoStore.todos.map(todo => <TodoView todo={todo} key={todo.id} />)}
+          {todoStore.todos.toJS().map(todo => <TodoView todo={todo} key={todo.id} />)}
         </ul>
         Task left: {todoStore.activeTodoCount}
       </div>
@@ -20,4 +21,4 @@ class TodoListView extends Component {
   }
 }
 
-export default TodoView;
+export default TodoListView;

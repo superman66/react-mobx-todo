@@ -11,7 +11,7 @@ class TodoView extends Component {
           type="checkbox"
           onClick={ () => todo.completed = !todo.completed}
         />
-        3
+        {todo.title}
       </li>
     );
   }

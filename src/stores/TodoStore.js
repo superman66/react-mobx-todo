@@ -7,7 +7,7 @@ export default class TodoStore {
 
   @computed get activeTodoCount() {
     return this.todos.reduce((sum, todo) =>
-      sum + (todo.computed ? 0 : 1)
+      sum + (todo.completed ? 0 : 1)
     )
   }
 
